@@ -1,5 +1,6 @@
 require("dotenv").config();
 var axios = require("axios");
+var moment = require("moment");
 
 /*
 // OMDB API Key - 179b22c6
@@ -23,13 +24,21 @@ function start() {
             doThis(yourSearch);
             break;
         default:
-        console.log("Command Not Found. Please start your search with ...")
+        console.log("Command Not Found. Please start your search with \"node liri.js\" followed by: \"concert-this\", \"spotify-this-song\", \"movie-this\", or \"do-what-it-says\". You may then search for your Concert, Song, or Movie :)")
     }
 
 }
 
-function concertThis() {
-
+function concertThis(yourSearch) {
+axios.get(`https://rest.bandsintown.com/artists/${yourSearch}/events?app_id=codingbootcamp`)
+.then(function (response){
+    for (let i = 0; i < response.data.length; i++) {
+        console.log("---------------------")
+        console.log(response.data[i].venue.name);
+        console.log(response.data[i].venue.city + ", " + response.data[i].venue.region + " " + response.data[i].venue.country);
+        console.log(moment(response.data[i].datetime).format('MMMM Do YYYY'));
+    }
+})
 }
 
 
@@ -41,10 +50,8 @@ function spotifyThis(yourSearch) {
 
     //var spotify used to store ID/Secret. 
     var spotify = new Spotify({
-
-    //I will attempt to dynamically add these keys once I get this working
-      id: "c0671d6c126742ffbfd066e72d492c1c",
-      secret: "5dbd3bba36144deeb12d8b2806090166"
+      id: process.env.SPOTIFY_ID,
+      secret: process.env.SPOTIFY_SECRET
     })
     
 
@@ -66,11 +73,7 @@ function spotifyThis(yourSearch) {
 
 function movieThis(yourSearch) {
     axios.get(`http://www.omdbapi.com/?apikey=${process.env.OMDB_API}&t=${yourSearch}`)
-
-    //anything after a ? is a query parameter. "&"" specifies a new query parameter
-
     .then(function (response) {
-      // handle success
       console.log(response.data.Title);
       console.log(response.data.Year);
       console.log(response.data.imdbRating);
@@ -82,7 +85,7 @@ function movieThis(yourSearch) {
     })
     .catch(function (error) {
       // handle error
-      console.log(error);
+      console.log('Error occurred: ' + error);
     })
     .finally(function () {
       // always executed
@@ -94,4 +97,3 @@ function doThis() {
 }
 
 start();
-
