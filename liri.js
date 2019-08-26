@@ -54,7 +54,7 @@ function spotifyThis(yourSearch) {
           return console.log('Error occurred: ' + err);
         }
        
-      console.log(data); 
+      console.log(data.tracks.items); 
     });
 
 }
