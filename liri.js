@@ -54,8 +54,12 @@ function spotifyThis(yourSearch) {
           return console.log('Error occurred: ' + err);
         }
        
-      console.log(data.tracks.items); 
+      console.log(data.tracks.items[0].album.artists[0].name); 
+      console.log(data.tracks.items[0].name);
+      console.log(data.tracks.items[0].preview_url);
+      console.log(data.tracks.items[0].album.name);
     });
+
 
 }
 
@@ -67,7 +71,14 @@ function movieThis(yourSearch) {
 
     .then(function (response) {
       // handle success
-      console.log(response.data);
+      console.log(response.data.Title);
+      console.log(response.data.Year);
+      console.log(response.data.imdbRating);
+      console.log(response.data.Ratings[1]);
+      console.log(response.data.Production);
+      console.log(response.data.Language);
+      console.log(response.data.Plot);
+      console.log(response.data.Actors);
     })
     .catch(function (error) {
       // handle error
