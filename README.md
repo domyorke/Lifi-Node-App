@@ -1,26 +1,51 @@
-# Lifi-Node-App
-LIRI is a Language Interpretation and Recognition Interface. 
+# Liri-Node-App
+Liri is a Language Interpretation and Recognition Interface that searches movie information, songs, and upcoming concerts. In order to achieve this, Liri interfaces with Spotify, BandsInTown, and OMDB. 
+
+### Liri can be run...
+1. With two arguments in the command line (command and yourSearch).
+2. Off a random.txt file 
+
+# General Syntax
+```
+node liri.js command yourSearch
+```
+In order to search Liri, the user will input the following argument (the "command") which is then followed by the user's search...
+
+* `concert-this` - Used to search for upcoming concerts for a musical artist via BandsInTown
+* `spotify-this-song` - Used to search a song via spotify
+* `movie-this` - Used to search information about a movie via OMDB
+
+### Example Search
+```
+node liri.js spotify-this-song "reckoner"
+```
+In the above line, "spotify-this-song" is the first "command" argument, and "reckoner" is the "yourSearch" argument.
 
 
-Google Drive link with a walkthru of the the Liri. 
-https://drive.google.com/drive/folders/1NOyjbFcT9RsLonpJ4zD7stmN-Tdv49yn?usp=sharing
+### "do-what-it-says" search
+In this case, the "do-what-it-says" search reads data from the "random.txt" file using the fs.readFile method. Then the Javascript method "split," is used to the text into separate variables (output1 and output2). These output variables are then set to the arguments argv.2 and argv.3. This process allows the user to search a text file via Liri instead of inputing the information manually. 
 
-Clearly state the problem the app is trying to solve (i.e. what is it doing and why)
-Liri is a backend application that is an all in one search for movie information, Spotify song search, and upcoming concerts. 
+Examples of these searches are shown below...
 
-Concert This Demo...
+# Demos
 
-![https://github.com/domyorke/Lifi-Node-App/blob/master/Liri%20Demo%20gifs/concert-this.gif?raw=true](concert-this.gif)
+##### spotify-this-song Demo...
+
+![](https://github.com/domyorke/Lifi-Node-App/blob/master/Liri%20Demo%20gifs/spotify-this-song.gif?raw=true)
+
+##### concert-this Demo...
+
+![](https://github.com/domyorke/Lifi-Node-App/blob/master/Liri%20Demo%20gifs/concert-this.gif?raw=true)
+
+##### movie-this Demo...
+
+![](https://github.com/domyorke/Lifi-Node-App/blob/master/Liri%20Demo%20gifs/movie-this.gif?raw=true)
+
+##### do-what-it-says Demo...
+
+![](https://github.com/domyorke/Lifi-Node-App/blob/master/Liri%20Demo%20gifs/do-what-it-says.gif?raw=true)
 
 
+See my deployed LIRI project [here](https://domyorke.github.io/Lifi-Node-App/).
 
-
-
-
-
-Give a high-level overview of how the app is organized
-Give start-to-finish instructions on how to run the app
-Include screenshots, gifs or videos of the app functioning
-Contain a link to a deployed version of the app
-Clearly list the technologies used in the app
-State your role in the app development
+Project created by Dominic Jenkins
