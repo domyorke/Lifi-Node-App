@@ -10,7 +10,7 @@ Liri is a backend application that is an all in one search for movie information
 
 Concert This Demo...
 
-![](concert-this.gif)
+![https://github.com/domyorke/Lifi-Node-App/blob/master/Liri%20Demo%20gifs/concert-this.gif?raw=true](concert-this.gif)
 
 
 
