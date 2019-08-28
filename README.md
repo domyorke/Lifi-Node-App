@@ -9,7 +9,7 @@ Liri is a Language Interpretation and Recognition Interface that searches movie 
 ```
 node liri.js command yourSearch
 ```
-In order to search Liri, the user will input the following argument (the "command") which is then followed by the user's search...
+To search Liri, the user will input the following argument (the "command") which is then followed by the user's search...
 
 * `concert-this` - Used to search for upcoming concerts for a musical artist via BandsInTown
 * `spotify-this-song` - Used to search a song via spotify
@@ -23,7 +23,7 @@ In the above line, "spotify-this-song" is the first "command" argument, and "rec
 
 
 ### "do-what-it-says" search
-In this case, the "do-what-it-says" search reads data from the "random.txt" file using the fs.readFile method. Then the Javascript method "split," is used to the text into separate variables (output1 and output2). These output variables are then set to the arguments argv.2 and argv.3. This process allows the user to search a text file via Liri instead of inputing the information manually. 
+In this case, the "do-what-it-says" search reads data from the "random.txt" file using the fs.readFile method. Then the Javascript method "split," is used to split the text into separate variables (output1 and output2). These output variables are then reassigned to the arguments "argv.2" and "argv.3." This process allows the user to search a text file via Liri instead of inputing their search in the console. 
 
 Examples of these searches are shown below...
 
@@ -44,6 +44,7 @@ Examples of these searches are shown below...
 ##### do-what-it-says Demo...
 
 ![](https://github.com/domyorke/Lifi-Node-App/blob/master/Liri%20Demo%20gifs/do-what-it-says.gif?raw=true)
+
 
 
 See my deployed LIRI project [here](https://domyorke.github.io/Lifi-Node-App/).
