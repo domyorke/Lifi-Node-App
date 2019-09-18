@@ -7,7 +7,7 @@ Liri is a Language Interpretation and Recognition Interface that searches movie 
 
 # General Search
 ```
-node liri.js command yourSearch
+node liri.js command "yourSearch"
 ```
 To search Liri, the user will input the following argument (the "command") which is then followed by the user's search...
 
