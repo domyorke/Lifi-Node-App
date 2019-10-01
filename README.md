@@ -45,8 +45,4 @@ Examples of these searches are shown below...
 
 ![](https://github.com/domyorke/Lifi-Node-App/blob/master/Liri%20Demo%20gifs/do-what-it-says.gif?raw=true)
 
-
-
-See my deployed LIRI project [here](https://domyorke.github.io/Lifi-Node-App/).
-
 Project created by Dominic Jenkins
